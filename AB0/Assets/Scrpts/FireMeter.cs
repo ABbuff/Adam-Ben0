@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class FireMeter : MonoBehaviour
 {
     public MechControlCode MechanicalController;
@@ -9,7 +8,8 @@ public class FireMeter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate()
+        needsChange = false;
+        //Instantiate(MeterBar)
     }
 
     // Update is called once per frame
@@ -17,8 +17,8 @@ public class FireMeter : MonoBehaviour
     {
         if (needsChange)
         {
-            private int
-            while()
+            //private int
+            //while()
         }
     }
 }

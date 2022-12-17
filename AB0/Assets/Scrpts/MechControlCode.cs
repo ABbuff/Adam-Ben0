@@ -17,4 +17,10 @@ public class MechControlCode : MonoBehaviour
     {
         
     }
+
+    public void outOfTime()
+    {
+        // display end game screen for Fighter victory
+
+    }
 }
