@@ -11,9 +11,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Walls
+  - Playable
+  - floor
   - 
   - 
   - 
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: PlaySpace
+    uniqueID: 1411897347
+    locked: 0
+  - name: UI
+    uniqueID: 1024212097
+    locked: 0
+  - name: UI2ndLvl
+    uniqueID: 4271148529
     locked: 0
