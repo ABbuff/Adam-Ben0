@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class MeterMarker : MonoBehaviour
 {
-    //public 
+    public MechControlCode mechController;
     // Start is called before the first frame update
     void Start()
     {
-        //this.position = 
+        gameObject.position
     }
 
     // Update is called once per frame
