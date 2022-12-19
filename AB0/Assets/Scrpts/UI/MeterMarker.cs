@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class MeterMarker : MonoBehaviour
     private static float startY = 6.7f;
     private static float maxScore;
     private static float deltaX;
+    private float distanceFromGoal;
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +24,18 @@ public class MeterMarker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        private float distanceFromGoal = gameObject.transform.position.x - (deltaX * mechController.score) + startX);
-        if (Math.Abs(distanceFromGoal) <= .05){
-            gameObject.transform.position = transform.position + new Vector3((distanceFromGoal*10f*Time.deltaTime), 0, 0);
+        distanceFromGoal = gameObject.transform.position.x - ((deltaX * mechController.score) + startX);
+        //Debug.Log("Distance Marker Should Move: " + distanceFromGoal);
+
+        if (Math.Abs(distanceFromGoal) >= .05)
+        {
+            gameObject.transform.position = transform.position - new Vector3(distanceFromGoal * 5f * Time.deltaTime, 0, 0);
         }
 
     }
 
+    public float getDistanceFromGoal()
+    {
+        return distanceFromGoal;
+    }
 }

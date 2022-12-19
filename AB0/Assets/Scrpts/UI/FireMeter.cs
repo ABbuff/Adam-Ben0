@@ -1,24 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class FireMeter : MonoBehaviour
 {
+    public MeterMarker marker;
     public MechControlCode MechanicalController;
-    private bool needsChange;
     // Start is called before the first frame update
     void Start()
     {
-        needsChange = false;
-        //Instantiate(MeterBar)
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (needsChange)
+        if (Math.Abs(marker.getDistanceFromGoal()) >= .05)
         {
-            //private int
-            //while()
+            //gameObject.transform.localScale += new Vector3(marker.getDistanceFromGoal() * 5f * Time.deltaTime, 0, 0);
         }
     }
 }
