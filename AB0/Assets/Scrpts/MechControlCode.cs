@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MechControlCode : MonoBehaviour
 {
-    public double score;
+    public float score;
+    public float maxScore;
     
     // Start is called before the first frame update
     void Start()
