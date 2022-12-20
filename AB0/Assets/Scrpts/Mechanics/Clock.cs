@@ -6,13 +6,14 @@ using TMPro;
 
 public class Clock : MonoBehaviour
 {
-    public MechControlCode mechController;
+    private MechControlCode mechController;
     public double timer;
     public int secs, mins;
     public int maxSeconds = 90;
     // Start is called before the first frame update
     void Start()
     {
+        mechController = GameObject.FindObjectOfType<MechControlCode>();
         secs = 0;
         mins = 0;
         timer = 0.0;
