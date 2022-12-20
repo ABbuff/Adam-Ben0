@@ -309,7 +309,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d2e52679b01034998f0252c98dac33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mechController: {fileID: 2104081603}
   timer: 0
   secs: 0
   mins: 0
@@ -325,6 +324,7 @@ GameObject:
   - component: {fileID: 249473841}
   - component: {fileID: 249473843}
   - component: {fileID: 249473844}
+  - component: {fileID: 249473845}
   m_Layer: 0
   m_Name: MeterBarFire
   m_TagString: Untagged
@@ -340,8 +340,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249473840}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.15, y: 0, z: -1}
-  m_LocalScale: {x: 0.18802747, y: 0.49424627, z: 1}
+  m_LocalPosition: {x: 0.15000005, y: 0, z: -1}
+  m_LocalScale: {x: 0.18802747, y: 0.4942462, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 893814383}
@@ -398,7 +398,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &249473844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,8 +411,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e2b514d3e1299429843a93e10aeba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  marker: {fileID: 1223939173}
-  MechanicalController: {fileID: 2104081603}
+--- !u!61 &249473845
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249473840}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,13 +547,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 893814382}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -686, y: 484.2, z: 0}
-  m_LocalScale: {x: 90.21891, y: 90.21891, z: 90.21891}
+  m_LocalPosition: {x: -8.631143, y: 6.7721276, z: 90}
+  m_LocalScale: {x: 1.13512, y: 1.13512, z: 1.13512}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 249473841}
-  m_Father: {fileID: 972721986}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &893814384
 MonoBehaviour:
@@ -543,8 +567,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e2b514d3e1299429843a93e10aeba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  marker: {fileID: 0}
-  MechanicalController: {fileID: 0}
 --- !u!210 &893814385
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -651,10 +673,9 @@ RectTransform:
   - {fileID: 135377437}
   - {fileID: 1598456211}
   - {fileID: 1814714983}
-  - {fileID: 893814383}
   - {fileID: 1590558807}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -674,9 +695,10 @@ GameObject:
   - component: {fileID: 1223939175}
   - component: {fileID: 1223939176}
   - component: {fileID: 1223939177}
+  - component: {fileID: 1223939178}
   m_Layer: 0
   m_Name: Marker
-  m_TagString: Untagged
+  m_TagString: Marker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -694,7 +716,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1223939173
 MonoBehaviour:
@@ -708,7 +730,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 149b026aa8eae824ca727d039643d5d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mechController: {fileID: 2104081603}
 --- !u!210 &1223939175
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -792,6 +813,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &1223939178
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223939171}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00000028684735, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.1875, y: 0, z: 0.1875, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.17646891, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1261224434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,7 +2010,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1590558806
 GameObject:
@@ -1994,7 +2041,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 972721986}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2161,7 +2208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33f636f50ed30e419775ba1290bb4b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clock: {fileID: 135377439}
 --- !u!1 &1814714982
 GameObject:
   m_ObjectHideFlags: 0
