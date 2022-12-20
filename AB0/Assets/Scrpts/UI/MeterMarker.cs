@@ -8,7 +8,7 @@ public class MeterMarker : MonoBehaviour
     public MechControlCode mechController;
     private static float startX = -8.4f;
     private static float endX = 8.4f;
-    private static float startY = 6.7f;
+    private static float constantY = 6.9f;
     private static float maxScore;
     private static float deltaX;
     private float distanceFromGoal;
@@ -18,7 +18,7 @@ public class MeterMarker : MonoBehaviour
     {
         maxScore = mechController.maxScore;
         deltaX = (endX - startX) / maxScore;
-        transform.position = new Vector2(startX, startY);
+        transform.position = new Vector2(startX, constantY);
     }
 
     // Update is called once per frame
