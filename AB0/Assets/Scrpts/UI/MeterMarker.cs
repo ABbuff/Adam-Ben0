@@ -33,14 +33,23 @@ public class MeterMarker : MonoBehaviour
             gameObject.transform.position = transform.position - new Vector3(distanceFromGoal * 5f * Time.deltaTime, 0, 0);
         }
 
+        Debug.Log(gameObject.transform.position.x);
     }
 
     public float getDistanceFromGoal()
     {
-        return distanceFromGoal;
+        return Math.Abs(distanceFromGoal);
     }
     public float getDeltaX()
     {
         return deltaX;
+    }
+    public bool isNegative(float num)
+    {
+        return num < 0;
+    }
+    public float getXPosition()
+    {
+        return gameObject.transform.position.x;
     }
 }

@@ -7,14 +7,19 @@ public class FireMeter : MonoBehaviour
     private MeterMarker marker;
     private MechControlCode mechController;
     private GameObject markerObj;
-    private float fScore;
+    private float fScore, positionDiff;
     private Vector3 expansion;
+    private Renderer visualObject;
     // Start is called before the first frame update
     void Start()
     {
+        //finds the Mechanical Controller and the Meter Marker
         marker = GameObject.FindObjectOfType<MeterMarker>();
         mechController = GameObject.FindObjectOfType<MechControlCode>();
-        markerObj = GameObject.FindWithTag("Marker");
+
+        //moves the oject to the pivot is in the perfect spot
+        gameObject.transform.localPosition = new Vector3((float)gameObject.GetComponent<Renderer>().bounds.extents.x,0,0);
+
     }
 
     // Update is called once per frame
@@ -28,13 +33,13 @@ public class FireMeter : MonoBehaviour
         */
 
         // Non-collision Mehtod
-        /*
-        if (Math.Abs(marker.getDistanceFromGoal()) >= .05)
+        visualObject = gameObject.GetComponent<Renderer>();
+
+        positionDiff = marker.getXPosition()- (visualObject.bounds.center.x + visualObject.bounds.extents.x);
+        if (positionDiff > 0f)
         {
-            expansion = new Vector3(5f, 0f, 0f);
-            gameObject.transform.parent.transform.localScale += expansion;
-            gameObject.transform.localPosition = new Vector3(0.15f,0f,0f);
+            gameObject.transform.parent.transform.localScale += new Vector3(positionDiff, 0f, 0f);
         }
-        */
+        
     }
 }
