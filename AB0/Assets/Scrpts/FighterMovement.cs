@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class FighterMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private float rotateSpeed = 350f; //could be upgraded with pickups!
 
-    // Update is called once per frame
     void Update()
     {
-        
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+
+        Vector2 movement = new Vector2(horizontal, vertical);
+        transform.position += (Vector3)movement * speed * Time.deltaTime;
+
+
+        if (movement != Vector2.zero) { //if theres a movement detected, object will rotate in that direction
+            Quaternion doRotate = Quaternion.LookRotation(Vector3.forward, movement);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, doRotate, rotateSpeed * Time.deltaTime);
+        }
     }
 }
