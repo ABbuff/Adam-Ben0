@@ -38,7 +38,7 @@ public class MechControlCode : MonoBehaviour
     }
     
     //ACCESSORS
-    public int getMaxScore(){
+    public float getMaxScore(){
         return (float) maxHealth;
     }
 }
