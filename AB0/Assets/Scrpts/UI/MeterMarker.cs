@@ -15,7 +15,7 @@ public class MeterMarker : MonoBehaviour
     void Start()
     {
         mechController = GameObject.FindObjectOfType<MechControlCode>();
-        maxScore = mechController.maxScore;
+        maxScore = mechController.getMaxScore();
         deltaX = (endX - startX) / maxScore;
         transform.position = new Vector2(startX, constantY);
         maxPosition = maxScore * deltaX + startX;

@@ -33,7 +33,7 @@ public class MechControlCode : MonoBehaviour
 
     //HELPER METHODS
     public void findAllBurnable(){
-        burnable = GameObject.FindObjectsWithTag("burnable");
+        burnable = GameObject.FindGameObjectsWithTag("burnable");
         maxScore = 100 * burnable.Length;
     }
     
